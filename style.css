@@ -1,0 +1,85 @@
+.bird{
+  display: block;
+  width: 100px;
+  height: 150px;
+  background-color: #0089ff;
+  margin-left: 100px;
+  margin-top: 25px;
+  border-radius: 50px 50px 100px 0;
+  transform: rotateZ(30deg);
+  position: relative;
+   
+}
+.bird:hover{
+  -webkit-animation: MoveUpDown 1s linear infinite;
+}
+.bird::before{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border: 15px solid transparent;
+  border-left: 25px solid #ffca00;
+  transform: rotateZ(-30deg);
+  right: -29px;
+  top: 2px;
+}
+.bird::after{
+  content: '';
+  display: block;
+  position: absolute;
+  width: 60px;
+  height: 90px;
+  background-color: #006ecd;
+  border-radius: 50px 50px 100px 0;
+  transform: rotateZ(90deg);
+  top: 40px;
+  left: -20px
+}
+.bird:hover::after{
+  transform: rotateZ(60deg);
+  animation: Flaps 1s  infinite;
+}
+
+
+@keyframes MoveUpDown {
+  0%, 100% {
+    bottom: 0;
+  }
+  50% {
+    bottom:20px;
+  }
+}
+
+@keyframes Flaps{
+  0%, 100% {
+    transform: rotateZ(60deg);
+  }
+  50% {
+    transform: rotateZ(90deg);
+  }
+  
+}
+
+.eye{
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  border-radius: 10px;
+  top: 20px;
+  right: 25px;
+}
+.eye::before{
+  content: '';
+  display: block;
+  background-color: #333;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  top: 2px;
+  right: 0px;
+}
